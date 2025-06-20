@@ -1,0 +1,47 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code / JetBrains
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Secrets and configs
+.env
+secrets.json
+
+# EF Migrations metadata
+**/Migrations/*Snapshot.cs
+**/Migrations/*.Designer.cs
+
+# Docker volumes or container data
+pgdata/
+
+# Database
+*.mdf
+*.ldf
+*.db
+*.sqlite
+
+# NuGet packages
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Others
+*.DS_Store
+Thumbs.db
+
+# Test results
+TestResults/
+coverage/
