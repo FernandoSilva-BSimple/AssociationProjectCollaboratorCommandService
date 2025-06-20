@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj": {}
+    "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj": {
+    "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\nandi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\fernandosilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nandi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\fernandosilva\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

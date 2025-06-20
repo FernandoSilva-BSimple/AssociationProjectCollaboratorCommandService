@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Application\\Application.csproj": {}
+    "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Application\\Application.csproj": {
+    "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\nandi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Application\\obj\\",
+        "projectPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\fernandosilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nandi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\fernandosilva\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,11 +26,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Contracts\\Contracts.csproj"
+              "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Contracts\\Contracts.csproj": {
+                "projectPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Contracts\\Contracts.csproj"
               },
-              "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj"
+              "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj"
               }
             }
           }
@@ -76,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Contracts\\Contracts.csproj": {
+    "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Contracts\\Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Contracts\\Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Contracts\\Contracts.csproj",
-        "packagesPath": "C:\\Users\\nandi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Contracts\\obj\\",
+        "projectPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Contracts\\Contracts.csproj",
+        "packagesPath": "C:\\Users\\fernandosilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nandi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\fernandosilva\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -135,21 +135,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj": {
+    "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\nandi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nandi\\Desktop\\academia\\AssociationProjectCollaboratorService\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\fernandosilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fernandosilva\\Desktop\\microsservices\\AssociationProjectCollaboratorCommandService\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nandi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\fernandosilva\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -194,7 +194,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
