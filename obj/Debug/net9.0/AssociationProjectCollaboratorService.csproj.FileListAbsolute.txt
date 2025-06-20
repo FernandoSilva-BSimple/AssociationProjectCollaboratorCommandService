@@ -1,7 +1,0 @@
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.csproj.AssemblyReference.cache
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.AssemblyInfoInputs.cache
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.AssemblyInfo.cs
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.csproj.CoreCompileInputs.cache
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\nandi\Desktop\academia\AssociationProjectCollaboratorService\obj\Debug\net9.0\AssociationProjectCollaboratorService.MvcApplicationPartsAssemblyInfo.cache
