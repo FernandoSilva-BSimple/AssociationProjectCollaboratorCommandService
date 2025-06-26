@@ -56,9 +56,10 @@ public class AssociationProjectCollaboratorService
 
     public async Task CreateWithoutValidations(Guid id, Guid projectId, Guid collaboratorId, PeriodDate periodDate)
     {
-        IAssociationProjectCollaborator assPC;
-
-        assPC = _factory.Create(id, projectId, collaboratorId, periodDate);
+        var exists = await _assocRepository.ExistsAsync(id);
+        if (exists)
+            return;
+        var assPC = _factory.Create(id, projectId, collaboratorId, periodDate);
         await _assocRepository.AddAsync(assPC);
     }
 }

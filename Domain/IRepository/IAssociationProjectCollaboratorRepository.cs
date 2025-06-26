@@ -6,5 +6,6 @@ namespace Domain.IRepository;
 
 public interface IAssociationProjectCollaboratorRepository : IGenericRepositoryEF<IAssociationProjectCollaborator, AssociationProjectCollaborator, IAssociationProjectCollaboratorVisitor>
 {
+    Task<bool> ExistsAsync(Guid id);
 
 }
