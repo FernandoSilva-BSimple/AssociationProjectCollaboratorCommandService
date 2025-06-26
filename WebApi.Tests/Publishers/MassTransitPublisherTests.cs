@@ -1,5 +1,6 @@
 using Domain.Models;
 using MassTransit;
+using MEssaging;
 using Moq;
 using WebApi.Publishers;
 
@@ -22,7 +23,7 @@ public class MassTransitPublisherTests
 
         // Assert
         mock.Verify(p => p.Publish(
-            It.Is<MEssaging.AssociationProjectCollaboratorCreated>(msg =>
+            It.Is<AssociationProjectCollaboratorCreated>(msg =>
                 msg.id == id &&
                 msg.projectId == projId &&
                 msg.collaboratorId == collabId &&
