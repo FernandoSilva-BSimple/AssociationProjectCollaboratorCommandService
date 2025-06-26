@@ -1,13 +1,9 @@
-using System;
-using System.Threading.Tasks;
 using Application.Interfaces;
-using Application.Services;
 using Domain.Models;
 using MassTransit;
 using MassTransit.Testing;
 using MEssaging;
 using Moq;
-using Xunit;
 
 public class IntegrationTests
 {
