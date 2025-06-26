@@ -1,18 +1,15 @@
-using System;
-using System.Threading.Tasks;
-using Application.Services;
+using Application.Interfaces;
 using MassTransit;
 using MEssaging;
 using Moq;
-using Xunit;
 
 public class AssociationProjectCollaboratorCreatedConsumerTests
 {
     [Fact]
-    public async Task ShouldCallService_WhenEventConsumed()
+    public async Task Should_handle_association_created_message()
     {
         // Arrange
-        var mockService = new Mock<AssociationProjectCollaboratorService>();
+        var mockService = new Mock<IAssociationProjectCollaboratorService>();
         var consumer = new AssociationProjectCollaboratorCreatedConsumer(mockService.Object);
 
         var message = new AssociationProjectCollaboratorCreated(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),

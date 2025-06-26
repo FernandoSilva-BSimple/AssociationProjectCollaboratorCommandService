@@ -1,12 +1,7 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Application.Publishers;
 using Domain.Models;
 using MassTransit;
 using Moq;
 using WebApi.Publishers;
-using Xunit;
 
 public class MassTransitPublisherTests
 {

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Application.Interfaces;
 using Application.Services;
 using Domain.Models;
 using MassTransit;
@@ -15,7 +16,7 @@ public class IntegrationTests
     {
         var harness = new InMemoryTestHarness();
 
-        var mockService = new Mock<AssociationProjectCollaboratorService>();
+        var mockService = new Mock<IAssociationProjectCollaboratorService>();
         var consumerHarness = harness.Consumer(() =>
             new AssociationProjectCollaboratorCreatedConsumer(mockService.Object)
         );
@@ -34,7 +35,17 @@ public class IntegrationTests
 
             Assert.True(await harness.Consumed.Any<AssociationProjectCollaboratorCreated>(), "Message was not consumed by the bus");
 
-            mockService.Verify(s => s.CreateWithoutValidations(msg.id, msg.projectId, msg.collaboratorId, msg.periodDate), Times.Once);
+            mockService.Verify(s =>
+                s.CreateWithoutValidations(
+                    msg.id,
+                    msg.projectId,
+                    msg.collaboratorId,
+                    It.Is<PeriodDate>(p =>
+                        p.InitDate == msg.periodDate.InitDate &&
+                        p.FinalDate == msg.periodDate.FinalDate
+                    )),
+                Times.Once
+            );
         }
         finally
         {
