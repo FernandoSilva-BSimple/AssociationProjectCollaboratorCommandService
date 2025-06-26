@@ -1,12 +1,13 @@
+using Application.Interfaces;
 using Application.Services;
 using Domain.Messaging;
 using MassTransit;
 
 public class CollaboratorCreatedConsumer : IConsumer<CollaboratorCreated>
 {
-    private readonly CollaboratorService _collaboratorService;
+    private readonly ICollaboratorService _collaboratorService;
 
-    public CollaboratorCreatedConsumer(CollaboratorService collaboratorService)
+    public CollaboratorCreatedConsumer(ICollaboratorService collaboratorService)
     {
         _collaboratorService = collaboratorService;
     }

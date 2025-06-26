@@ -1,12 +1,13 @@
+using Application.Interfaces;
 using Application.Services;
 using MassTransit;
 using MEssaging;
 
 public class AssociationProjectCollaboratorCreatedConsumer : IConsumer<AssociationProjectCollaboratorCreated>
 {
-    private readonly AssociationProjectCollaboratorService _assocService;
+    private readonly IAssociationProjectCollaboratorService _assocService;
 
-    public AssociationProjectCollaboratorCreatedConsumer(AssociationProjectCollaboratorService assPCService)
+    public AssociationProjectCollaboratorCreatedConsumer(IAssociationProjectCollaboratorService assPCService)
     {
         _assocService = assPCService;
     }

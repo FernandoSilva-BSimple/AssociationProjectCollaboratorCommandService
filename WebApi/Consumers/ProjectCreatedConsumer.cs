@@ -1,3 +1,4 @@
+using Application.Interfaces;
 using Application.Services;
 using Domain.Messaging;
 using MassTransit;
@@ -6,9 +7,9 @@ namespace WebApi.Consumers;
 
 public class ProjectCreatedConsumer : IConsumer<ProjectCreated>
 {
-    private readonly ProjectService _projectService;
+    private readonly IProjectService _projectService;
 
-    public ProjectCreatedConsumer(ProjectService projectService)
+    public ProjectCreatedConsumer(IProjectService projectService)
     {
         _projectService = projectService;
     }
