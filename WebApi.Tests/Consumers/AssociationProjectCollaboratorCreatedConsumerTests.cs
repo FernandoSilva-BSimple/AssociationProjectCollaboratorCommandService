@@ -1,4 +1,5 @@
 using Application.Interfaces;
+using Domain.Models;
 using MassTransit;
 using MEssaging;
 using Moq;
@@ -13,7 +14,7 @@ public class AssociationProjectCollaboratorCreatedConsumerTests
         var consumer = new AssociationProjectCollaboratorCreatedConsumer(mockService.Object);
 
         var message = new AssociationProjectCollaboratorCreated(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),
-            new Domain.Models.PeriodDate(DateOnly.FromDateTime(DateTime.Today), DateOnly.FromDateTime(DateTime.Today.AddDays(1))));
+            new PeriodDate(DateOnly.FromDateTime(DateTime.Today), DateOnly.FromDateTime(DateTime.Today.AddDays(1))));
 
         var context = Mock.Of<ConsumeContext<AssociationProjectCollaboratorCreated>>(c => c.Message == message);
 

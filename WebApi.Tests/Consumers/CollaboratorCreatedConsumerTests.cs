@@ -1,4 +1,5 @@
 using Application.Interfaces;
+using Domain.Messaging;
 using MassTransit;
 using Moq;
 public class CollaboratorCreatedConsumerTests
@@ -8,9 +9,9 @@ public class CollaboratorCreatedConsumerTests
     {
         var service = new Mock<ICollaboratorService>();
         var consumer = new CollaboratorCreatedConsumer(service.Object);
-        var message = new Domain.Messaging.CollaboratorCreated(Guid.NewGuid());
+        var message = new CollaboratorCreated(Guid.NewGuid());
 
-        var context = Mock.Of<ConsumeContext<Domain.Messaging.CollaboratorCreated>>(c => c.Message == message);
+        var context = Mock.Of<ConsumeContext<CollaboratorCreated>>(c => c.Message == message);
 
         await consumer.Consume(context);
 

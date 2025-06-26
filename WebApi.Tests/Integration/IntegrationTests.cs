@@ -29,7 +29,7 @@ public class IntegrationTests
 
             await harness.Bus.Publish(msg);
 
-            Assert.True(await harness.Consumed.Any<AssociationProjectCollaboratorCreated>(), "Message was not consumed by the bus");
+            Assert.True(await harness.Consumed.Any<AssociationProjectCollaboratorCreated>());
 
             mockService.Verify(s =>
                 s.CreateWithoutValidations(
