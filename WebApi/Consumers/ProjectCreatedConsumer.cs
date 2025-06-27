@@ -15,9 +15,21 @@ public class ProjectCreatedConsumer : IConsumer<ProjectCreatedMessage>
 
     public async Task Consume(ConsumeContext<ProjectCreatedMessage> context)
     {
-        Console.WriteLine("🔥 ProjectCreated received: " + context.Message.id);
+        Console.WriteLine(">>> [CONSUMER TRIGGERED]");
 
-        var msg = context.Message;
-        await _projectService.SubmitAsync(msg.id);
+        try
+        {
+            Console.WriteLine("🔥 ProjectCreated received: " + context.Message.id);
+            var msg = context.Message;
+            await _projectService.SubmitAsync(msg.id);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[ERROR] {ex.Message}");
+            throw;
+        }
+
+
+
     }
 }

@@ -1,7 +1,6 @@
 using Application.Interfaces;
-using Application.Services;
 using MassTransit;
-using MEssaging;
+using Domain.Messages;
 
 public class AssociationProjectCollaboratorCreatedConsumer : IConsumer<AssociationProjectCollaboratorCreated>
 {

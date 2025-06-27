@@ -1,4 +1,5 @@
 using Application.DTO;
+using Application.Interfaces;
 using Application.Publishers;
 using Application.Services;
 using Domain.Factory;
@@ -33,7 +34,7 @@ builder.Services.AddDbContext<AssociationDbContext>(options =>
 // Services
 builder.Services.AddTransient<AssociationProjectCollaboratorService>();
 builder.Services.AddTransient<CollaboratorService>();
-builder.Services.AddTransient<ProjectService>();
+builder.Services.AddTransient<IProjectService, ProjectService>();
 
 // Factories
 builder.Services.AddTransient<IAssociationProjectCollaboratorFactory, AssociationProjectCollaboratorFactory>();
@@ -67,19 +68,14 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("localhost", "/", h =>
-                {
-                    h.Username("guest");
-                    h.Password("guest");
-                }); cfg.ReceiveEndpoint("project-write-sync", e =>
-               {
-                   e.ConfigureConsumer<ProjectCreatedConsumer>(context);
-               });
-        cfg.ReceiveEndpoint(builder.Configuration["MassTransit:QueueName"]!, e =>
-                {
-                    e.ConfigureConsumer<CollaboratorCreatedConsumer>(context);
-                    e.ConfigureConsumer<AssociationProjectCollaboratorCreatedConsumer>(context);
-                });
+        cfg.Host("rabbitmq://localhost");
+        var instance = InstanceInfo.InstanceId;
+        cfg.ReceiveEndpoint($"associations-cmd-{instance}", e =>
+        {
+            e.ConfigureConsumer<CollaboratorCreatedConsumer>(context);
+            e.ConfigureConsumer<ProjectCreatedConsumer>(context);
+            e.ConfigureConsumer<AssociationProjectCollaboratorCreatedConsumer>(context);
+        });
     });
 });
 
