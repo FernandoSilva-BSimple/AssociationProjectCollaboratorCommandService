@@ -1,8 +1,8 @@
 using Application.Interfaces;
 using Domain.Models;
 using MassTransit;
-using MEssaging;
 using Moq;
+using Domain.Messages;
 
 public class AssociationProjectCollaboratorCreatedConsumerTests
 {

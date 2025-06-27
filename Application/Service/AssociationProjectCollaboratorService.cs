@@ -1,6 +1,5 @@
 using Application.DTO;
 using Application.Publishers;
-using Contracts;
 using Domain.Factory;
 using Domain.Interfaces;
 using Domain.IRepository;

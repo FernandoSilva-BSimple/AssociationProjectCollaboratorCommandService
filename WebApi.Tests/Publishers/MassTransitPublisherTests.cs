@@ -1,6 +1,6 @@
 using Domain.Models;
 using MassTransit;
-using MEssaging;
+using Domain.Messages;
 using Moq;
 using WebApi.Publishers;
 
