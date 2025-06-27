@@ -33,7 +33,7 @@ builder.Services.AddDbContext<AssociationDbContext>(options =>
 
 // Services
 builder.Services.AddTransient<AssociationProjectCollaboratorService>();
-builder.Services.AddTransient<CollaboratorService>();
+builder.Services.AddTransient<ICollaboratorService, CollaboratorService>();
 builder.Services.AddTransient<IProjectService, ProjectService>();
 
 // Factories

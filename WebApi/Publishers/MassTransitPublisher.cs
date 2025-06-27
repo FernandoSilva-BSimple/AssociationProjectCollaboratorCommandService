@@ -1,8 +1,7 @@
 using Application.Publishers;
-using Domain.Messaging;
+using Domain.Messages;
 using Domain.Models;
 using MassTransit;
-using Domain.Messages;
 
 namespace WebApi.Publishers;
 

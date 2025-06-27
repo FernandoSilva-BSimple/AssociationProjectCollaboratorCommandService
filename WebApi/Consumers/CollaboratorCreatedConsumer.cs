@@ -1,9 +1,9 @@
 using Application.Interfaces;
 using Application.Services;
-using Domain.Messaging;
+using Domain.Messages;
 using MassTransit;
 
-public class CollaboratorCreatedConsumer : IConsumer<CollaboratorCreated>
+public class CollaboratorCreatedConsumer : IConsumer<CollaboratorCreatedMessage>
 {
     private readonly ICollaboratorService _collaboratorService;
 
@@ -12,9 +12,9 @@ public class CollaboratorCreatedConsumer : IConsumer<CollaboratorCreated>
         _collaboratorService = collaboratorService;
     }
 
-    public async Task Consume(ConsumeContext<CollaboratorCreated> context)
+    public async Task Consume(ConsumeContext<CollaboratorCreatedMessage> context)
     {
         var msg = context.Message;
-        await _collaboratorService.SubmitAsync(msg.id);
+        await _collaboratorService.SubmitAsync(msg.Id);
     }
 }

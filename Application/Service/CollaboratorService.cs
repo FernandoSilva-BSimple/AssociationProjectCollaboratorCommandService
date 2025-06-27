@@ -1,10 +1,11 @@
+using Application.Interfaces;
 using Domain.Factory;
 using Domain.Interfaces;
 using Domain.IRepository;
 
 namespace Application.Services;
 
-public class CollaboratorService
+public class CollaboratorService : ICollaboratorService
 {
     public ICollaboratorRepository _collaboratorRepository { get; set; }
     public ICollaboratorFactory _collaboratorFactory { get; set; }
