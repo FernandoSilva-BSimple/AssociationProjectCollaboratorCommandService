@@ -1,8 +1,8 @@
 using Application.Interfaces;
+using Domain.Messages;
 using Domain.Models;
 using MassTransit;
 using MassTransit.Testing;
-using MEssaging;
 using Moq;
 
 public class IntegrationTests

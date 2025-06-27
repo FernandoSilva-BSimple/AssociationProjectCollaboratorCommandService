@@ -1,6 +1,7 @@
+using Application.Interfaces;
 using Domain.IRepository;
 
-public class ProjectService
+public class ProjectService : IProjectService
 {
     public IProjectRepository _projectRepository;
     public IProjectFactory _projectFactory;
