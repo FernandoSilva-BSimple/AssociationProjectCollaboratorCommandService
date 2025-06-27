@@ -67,11 +67,17 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("rabbitmq://localhost");
+        cfg.Host("localhost", "/", h =>
+                {
+                    h.Username("guest");
+                    h.Password("guest");
+                }); cfg.ReceiveEndpoint("project-write-sync", e =>
+               {
+                   e.ConfigureConsumer<ProjectCreatedConsumer>(context);
+               });
         cfg.ReceiveEndpoint(builder.Configuration["MassTransit:QueueName"]!, e =>
                 {
                     e.ConfigureConsumer<CollaboratorCreatedConsumer>(context);
-                    e.ConfigureConsumer<ProjectCreatedConsumer>(context);
                     e.ConfigureConsumer<AssociationProjectCollaboratorCreatedConsumer>(context);
                 });
     });

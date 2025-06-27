@@ -1,11 +1,10 @@
 using Application.Interfaces;
-using Application.Services;
-using Domain.Messaging;
+using Domain.Messages;
 using MassTransit;
 
 namespace WebApi.Consumers;
 
-public class ProjectCreatedConsumer : IConsumer<ProjectCreated>
+public class ProjectCreatedConsumer : IConsumer<ProjectCreatedMessage>
 {
     private readonly IProjectService _projectService;
 
@@ -14,8 +13,10 @@ public class ProjectCreatedConsumer : IConsumer<ProjectCreated>
         _projectService = projectService;
     }
 
-    public async Task Consume(ConsumeContext<ProjectCreated> context)
+    public async Task Consume(ConsumeContext<ProjectCreatedMessage> context)
     {
+        Console.WriteLine("🔥 ProjectCreated received: " + context.Message.id);
+
         var msg = context.Message;
         await _projectService.SubmitAsync(msg.id);
     }
