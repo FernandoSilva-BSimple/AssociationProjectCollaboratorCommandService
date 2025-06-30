@@ -2,6 +2,6 @@ using Domain.Models;
 
 namespace Domain.Messages
 {
-    public record AssociationProjectCollaboratorCreated(Guid id, Guid projectId, Guid collaboratorId, PeriodDate periodDate);
+    public record AssociationProjectCollaboratorCreatedMessage(Guid Id, Guid ProjectId, Guid CollaboratorId, PeriodDate PeriodDate);
 }
 
