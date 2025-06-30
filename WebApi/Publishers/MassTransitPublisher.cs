@@ -16,6 +16,6 @@ public class MassTransitPublisher : IMessagePublisher
 
     public async Task PublishOrderSubmittedAsync(Guid Id, Guid projectId, Guid collaboratorId, PeriodDate periodDate)
     {
-        await _publishEndpoint.Publish(new AssociationProjectCollaboratorCreated(Id, projectId, collaboratorId, periodDate));
+        await _publishEndpoint.Publish(new AssociationProjectCollaboratorCreatedMessage(Id, projectId, collaboratorId, periodDate));
     }
 }

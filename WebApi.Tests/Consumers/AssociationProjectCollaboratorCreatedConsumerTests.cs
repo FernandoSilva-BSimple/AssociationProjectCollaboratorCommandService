@@ -13,15 +13,15 @@ public class AssociationProjectCollaboratorCreatedConsumerTests
         var mockService = new Mock<IAssociationProjectCollaboratorService>();
         var consumer = new AssociationProjectCollaboratorCreatedConsumer(mockService.Object);
 
-        var message = new AssociationProjectCollaboratorCreated(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),
+        var message = new AssociationProjectCollaboratorCreatedMessage(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),
             new PeriodDate(DateOnly.FromDateTime(DateTime.Today), DateOnly.FromDateTime(DateTime.Today.AddDays(1))));
 
-        var context = Mock.Of<ConsumeContext<AssociationProjectCollaboratorCreated>>(c => c.Message == message);
+        var context = Mock.Of<ConsumeContext<AssociationProjectCollaboratorCreatedMessage>>(c => c.Message == message);
 
         // Act
         await consumer.Consume(context);
 
         // Assert
-        mockService.Verify(s => s.CreateWithoutValidations(message.id, message.projectId, message.collaboratorId, message.periodDate), Times.Once);
+        mockService.Verify(s => s.CreateWithoutValidations(message.Id, message.ProjectId, message.CollaboratorId, message.PeriodDate), Times.Once);
     }
 }

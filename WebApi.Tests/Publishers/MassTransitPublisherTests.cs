@@ -23,11 +23,11 @@ public class MassTransitPublisherTests
 
         // Assert
         mock.Verify(p => p.Publish(
-            It.Is<AssociationProjectCollaboratorCreated>(msg =>
-                msg.id == id &&
-                msg.projectId == projId &&
-                msg.collaboratorId == collabId &&
-                msg.periodDate.Equals(period)
+            It.Is<AssociationProjectCollaboratorCreatedMessage>(msg =>
+                msg.Id == id &&
+                msg.ProjectId == projId &&
+                msg.CollaboratorId == collabId &&
+                msg.PeriodDate.Equals(period)
             ),
             It.IsAny<CancellationToken>()),
             Times.Once);

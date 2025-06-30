@@ -2,7 +2,7 @@ using Application.Interfaces;
 using MassTransit;
 using Domain.Messages;
 
-public class AssociationProjectCollaboratorCreatedConsumer : IConsumer<AssociationProjectCollaboratorCreated>
+public class AssociationProjectCollaboratorCreatedConsumer : IConsumer<AssociationProjectCollaboratorCreatedMessage>
 {
     private readonly IAssociationProjectCollaboratorService _assocService;
 
@@ -11,9 +11,9 @@ public class AssociationProjectCollaboratorCreatedConsumer : IConsumer<Associati
         _assocService = assPCService;
     }
 
-    public async Task Consume(ConsumeContext<AssociationProjectCollaboratorCreated> context)
+    public async Task Consume(ConsumeContext<AssociationProjectCollaboratorCreatedMessage> context)
     {
         var message = context.Message;
-        await _assocService.CreateWithoutValidations(message.id, message.projectId, message.collaboratorId, message.periodDate);
+        await _assocService.CreateWithoutValidations(message.Id, message.ProjectId, message.CollaboratorId, message.PeriodDate);
     }
 }

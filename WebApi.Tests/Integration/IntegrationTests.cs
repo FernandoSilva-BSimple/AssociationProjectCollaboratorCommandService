@@ -20,7 +20,7 @@ public class IntegrationTests
         await harness.Start();
         try
         {
-            var msg = new AssociationProjectCollaboratorCreated(
+            var msg = new AssociationProjectCollaboratorCreatedMessage(
                 Guid.NewGuid(),
                 Guid.NewGuid(),
                 Guid.NewGuid(),
@@ -29,16 +29,16 @@ public class IntegrationTests
 
             await harness.Bus.Publish(msg);
 
-            Assert.True(await harness.Consumed.Any<AssociationProjectCollaboratorCreated>());
+            Assert.True(await harness.Consumed.Any<AssociationProjectCollaboratorCreatedMessage>());
 
             mockService.Verify(s =>
                 s.CreateWithoutValidations(
-                    msg.id,
-                    msg.projectId,
-                    msg.collaboratorId,
+                    msg.Id,
+                    msg.ProjectId,
+                    msg.CollaboratorId,
                     It.Is<PeriodDate>(p =>
-                        p.InitDate == msg.periodDate.InitDate &&
-                        p.FinalDate == msg.periodDate.FinalDate
+                        p.InitDate == msg.PeriodDate.InitDate &&
+                        p.FinalDate == msg.PeriodDate.FinalDate
                     )),
                 Times.Once
             );
