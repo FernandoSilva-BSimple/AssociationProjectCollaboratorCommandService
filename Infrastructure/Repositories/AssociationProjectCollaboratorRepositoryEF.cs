@@ -39,4 +39,14 @@ public class AssociationProjectCollaboratorRepositoryEF : GenericRepositoryEF<IA
         return await _context.Set<AssociationProjectCollaboratorDataModel>().AnyAsync(x => x.Id == id);
     }
 
+    public async Task<bool> ExistsWithCollaboratorAndProjectAndOverlappingPeriodAsync(Guid collaboratorId, Guid projectId, PeriodDate periodDate)
+    {
+        return await _context.Set<AssociationProjectCollaboratorDataModel>()
+            .AnyAsync(x =>
+                x.CollaboratorId == collaboratorId &&
+                x.ProjectId == projectId &&
+                x.PeriodDate.InitDate <= periodDate.FinalDate &&
+                periodDate.InitDate <= x.PeriodDate.FinalDate);
+    }
+
 }
