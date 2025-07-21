@@ -17,6 +17,12 @@ public class AssociationDbContext : DbContext
         modelBuilder.Entity<AssociationProjectCollaboratorDataModel>()
             .OwnsOne(a => a.PeriodDate);
 
+        modelBuilder.Entity<CollaboratorDataModel>()
+            .OwnsOne(c => c.PeriodDateTime);
+
+        modelBuilder.Entity<ProjectDataModel>()
+            .OwnsOne(p => p.PeriodDate);
+
         base.OnModelCreating(modelBuilder);
     }
 }

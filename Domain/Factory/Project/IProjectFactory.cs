@@ -3,6 +3,6 @@ using Domain.Visitor;
 
 public interface IProjectFactory
 {
-    IProject Create(Guid id);
-    Project Create(IPRojectVisitor visitor);
+    IProject Create(Guid id, PeriodDate periodDate);
+    Project Create(IProjectVisitor visitor);
 }

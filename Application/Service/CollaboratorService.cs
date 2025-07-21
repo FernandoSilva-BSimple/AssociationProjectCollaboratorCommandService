@@ -2,6 +2,7 @@ using Application.Interfaces;
 using Domain.Factory;
 using Domain.Interfaces;
 using Domain.IRepository;
+using Domain.Models;
 
 namespace Application.Services;
 
@@ -16,11 +17,11 @@ public class CollaboratorService : ICollaboratorService
         _collaboratorFactory = collaboratorFactory;
     }
 
-    public async Task SubmitAsync(Guid id)
+    public async Task SubmitAsync(Guid id, PeriodDateTime periodDateTime)
     {
         ICollaborator collaborator;
 
-        collaborator = _collaboratorFactory.Create(id);
+        collaborator = _collaboratorFactory.Create(id, periodDateTime);
         await _collaboratorRepository.AddAsync(collaborator);
     }
 }

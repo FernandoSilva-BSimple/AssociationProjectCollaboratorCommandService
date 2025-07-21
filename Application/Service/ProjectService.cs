@@ -1,5 +1,6 @@
 using Application.Interfaces;
 using Domain.IRepository;
+using Domain.Models;
 
 public class ProjectService : IProjectService
 {
@@ -12,11 +13,11 @@ public class ProjectService : IProjectService
         _projectFactory = projectFactory;
     }
 
-    public async Task SubmitAsync(Guid id)
+    public async Task SubmitAsync(Guid id, PeriodDate periodDate)
     {
         IProject project;
 
-        project = _projectFactory.Create(id);
+        project = _projectFactory.Create(id, periodDate);
         await _projectRepository.AddAsync(project);
     }
 }

@@ -8,13 +8,13 @@ public class CollaboratorFactory : ICollaboratorFactory
 {
     public CollaboratorFactory() { }
 
-    public ICollaborator Create(Guid id)
+    public ICollaborator Create(Guid id, PeriodDateTime periodDateTime)
     {
-        return new Collaborator(id);
+        return new Collaborator(id, periodDateTime);
     }
 
     public Collaborator Create(ICollaboratorVisitor visitor)
     {
-        return new Collaborator(visitor.Id);
+        return new Collaborator(visitor.Id, visitor.PeriodDateTime);
     }
 }

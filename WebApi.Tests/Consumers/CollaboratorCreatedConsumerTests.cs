@@ -21,7 +21,7 @@ public class CollaboratorCreatedConsumerTests
 
         await consumer.Consume(context);
 
-        service.Verify(s => s.SubmitAsync(message.Id), Times.Once);
+        service.Verify(s => s.SubmitAsync(message.Id, message.PeriodDateTime), Times.Once);
     }
 
 }

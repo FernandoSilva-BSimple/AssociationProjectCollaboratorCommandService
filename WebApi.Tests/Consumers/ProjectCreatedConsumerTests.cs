@@ -23,6 +23,6 @@ public class ProjectCreatedConsumerTests
 
         await consumer.Consume(context);
 
-        service.Verify(s => s.SubmitAsync(message.id), Times.Once);
+        service.Verify(s => s.SubmitAsync(message.Id, message.PeriodDate), Times.Once);
     }
 }

@@ -6,6 +6,6 @@ namespace Domain.Factory;
 
 public interface ICollaboratorFactory
 {
-    ICollaborator Create(Guid id);
+    ICollaborator Create(Guid id, PeriodDateTime periodDateTime);
     Collaborator Create(ICollaboratorVisitor visitor);
 }

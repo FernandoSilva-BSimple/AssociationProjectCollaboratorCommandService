@@ -19,9 +19,9 @@ public class ProjectCreatedConsumer : IConsumer<ProjectCreatedMessage>
 
         try
         {
-            Console.WriteLine("🔥 ProjectCreated received: " + context.Message.id);
+            Console.WriteLine("🔥 ProjectCreated received: " + context.Message.Id);
             var msg = context.Message;
-            await _projectService.SubmitAsync(msg.id);
+            await _projectService.SubmitAsync(msg.Id, msg.PeriodDate);
         }
         catch (Exception ex)
         {

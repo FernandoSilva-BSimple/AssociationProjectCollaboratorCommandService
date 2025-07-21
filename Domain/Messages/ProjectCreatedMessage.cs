@@ -2,4 +2,4 @@ using Domain.Models;
 
 namespace Domain.Messages;
 
-public record ProjectCreatedMessage(Guid id, string title, string acronym, PeriodDate periodDate);
+public record ProjectCreatedMessage(Guid Id, string Title, string Acronym, PeriodDate PeriodDate);

@@ -15,6 +15,6 @@ public class CollaboratorCreatedConsumer : IConsumer<CollaboratorCreatedMessage>
     public async Task Consume(ConsumeContext<CollaboratorCreatedMessage> context)
     {
         var msg = context.Message;
-        await _collaboratorService.SubmitAsync(msg.Id);
+        await _collaboratorService.SubmitAsync(msg.Id, msg.PeriodDateTime);
     }
 }

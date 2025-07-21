@@ -5,13 +5,13 @@ public class ProjectFactory : IProjectFactory
 {
     public ProjectFactory() { }
 
-    public IProject Create(Guid id)
+    public IProject Create(Guid id, PeriodDate periodDate)
     {
-        return new Project(id);
+        return new Project(id, periodDate);
     }
 
-    public Project Create(IPRojectVisitor visitor)
+    public Project Create(IProjectVisitor visitor)
     {
-        return new Project(visitor.Id);
+        return new Project(visitor.Id, visitor.PeriodDate);
     }
 }
