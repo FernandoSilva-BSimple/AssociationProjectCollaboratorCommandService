@@ -24,4 +24,10 @@ public class CollaboratorService : ICollaboratorService
         collaborator = _collaboratorFactory.Create(id, periodDateTime);
         await _collaboratorRepository.AddAsync(collaborator);
     }
+
+    public async Task SubmitUpdateAsync(Guid id, PeriodDateTime periodDateTime)
+    {
+        ICollaborator collaborator = _collaboratorFactory.Create(id, periodDateTime);
+        await _collaboratorRepository.UpdateAsync(collaborator);
+    }
 }

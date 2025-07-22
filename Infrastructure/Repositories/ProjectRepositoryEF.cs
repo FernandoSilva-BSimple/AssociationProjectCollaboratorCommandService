@@ -31,4 +31,18 @@ public class ProjectRepositoryEF : GenericRepositoryEF<IProject, Project, Projec
 
         return _mapper.Map<ProjectDataModel, Project>(projectDataModel);
     }
+
+    public async Task UpdateAsync(IProject project)
+    {
+        var existing = await _context.Set<ProjectDataModel>().FirstOrDefaultAsync(c => c.Id == project.Id);
+
+        if (existing is null)
+            return;
+
+        existing.PeriodDate.InitDate = project.PeriodDate.InitDate;
+        existing.PeriodDate.FinalDate = project.PeriodDate.FinalDate;
+
+        _context.Update(existing);
+        await _context.SaveChangesAsync();
+    }
 }

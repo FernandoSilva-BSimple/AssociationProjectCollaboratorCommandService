@@ -37,4 +37,19 @@ public class CollaboratorRepositoryEF : GenericRepositoryEF<ICollaborator, Colla
 
         return _mapper.Map<CollaboratorDataModel, Collaborator>(collabDM);
     }
+
+    public async Task UpdateAsync(ICollaborator collaborator)
+    {
+        var existing = await _context.Set<CollaboratorDataModel>().FirstOrDefaultAsync(c => c.Id == collaborator.Id);
+
+        if (existing is null)
+            return;
+
+        existing.PeriodDateTime._initDate = collaborator.PeriodDateTime._initDate;
+        existing.PeriodDateTime._finalDate = collaborator.PeriodDateTime._finalDate;
+
+        _context.Update(existing);
+        await _context.SaveChangesAsync();
+    }
+
 }

@@ -6,4 +6,6 @@ namespace Domain.IRepository;
 
 public interface ICollaboratorRepository : IGenericRepositoryEF<ICollaborator, Collaborator, ICollaboratorVisitor>
 {
+    Task UpdateAsync(ICollaborator collaborator);
+
 }

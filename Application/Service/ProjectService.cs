@@ -20,4 +20,10 @@ public class ProjectService : IProjectService
         project = _projectFactory.Create(id, periodDate);
         await _projectRepository.AddAsync(project);
     }
+
+    public async Task SubmitUpdateAsync(Guid id, PeriodDate periodDate)
+    {
+        IProject project = _projectFactory.Create(id, periodDate);
+        await _projectRepository.UpdateAsync(project);
+    }
 }

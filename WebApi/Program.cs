@@ -63,6 +63,8 @@ builder.Services.AddScoped<IMessagePublisher, MassTransitPublisher>();
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<CollaboratorCreatedConsumer>();
+    x.AddConsumer<CollaboratorUpdatedConsumer>();
+    x.AddConsumer<ProjectUpdatedConsumer>();
     x.AddConsumer<ProjectCreatedConsumer>();
     x.AddConsumer<AssociationProjectCollaboratorCreatedConsumer>();
 
@@ -75,6 +77,8 @@ builder.Services.AddMassTransit(x =>
             e.ConfigureConsumer<CollaboratorCreatedConsumer>(context);
             e.ConfigureConsumer<ProjectCreatedConsumer>(context);
             e.ConfigureConsumer<AssociationProjectCollaboratorCreatedConsumer>(context);
+            e.ConfigureConsumer<CollaboratorUpdatedConsumer>(context);
+            e.ConfigureConsumer<ProjectUpdatedConsumer>(context);
         });
     });
 });
