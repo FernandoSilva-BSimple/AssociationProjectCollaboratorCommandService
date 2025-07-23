@@ -1,4 +1,5 @@
 using Application.DTO;
+using Application.Interfaces;
 using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,9 +9,9 @@ namespace WebApi.Controllers;
 [Route("api/associationsPC")]
 public class AssociationProjectCollaboratorController : ControllerBase
 {
-    private readonly AssociationProjectCollaboratorService _service;
+    private readonly IAssociationProjectCollaboratorService _service;
 
-    public AssociationProjectCollaboratorController(AssociationProjectCollaboratorService service)
+    public AssociationProjectCollaboratorController(IAssociationProjectCollaboratorService service)
     {
         _service = service;
     }

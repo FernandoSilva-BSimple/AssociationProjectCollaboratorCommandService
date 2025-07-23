@@ -1,4 +1,5 @@
 using Application.DTO;
+using Application.Interfaces;
 using Application.Publishers;
 using Domain.Factory;
 using Domain.Interfaces;
@@ -8,7 +9,7 @@ using MassTransit;
 
 namespace Application.Services;
 
-public class AssociationProjectCollaboratorService
+public class AssociationProjectCollaboratorService : IAssociationProjectCollaboratorService
 {
     private readonly IAssociationProjectCollaboratorRepository _assocRepository;
     private readonly IAssociationProjectCollaboratorFactory _factory;

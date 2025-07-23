@@ -32,7 +32,7 @@ builder.Services.AddDbContext<AssociationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Services
-builder.Services.AddTransient<AssociationProjectCollaboratorService>();
+builder.Services.AddTransient<IAssociationProjectCollaboratorService, AssociationProjectCollaboratorService>();
 builder.Services.AddTransient<ICollaboratorService, CollaboratorService>();
 builder.Services.AddTransient<IProjectService, ProjectService>();
 
