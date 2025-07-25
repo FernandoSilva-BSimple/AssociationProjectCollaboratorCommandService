@@ -8,7 +8,7 @@ using Xunit;
 public class CollaboratorUpdatedConsumerTests
 {
     [Fact]
-    public async Task Should_handle_collaborator_updated_message()
+    public async Task WhenUpdatingConsumedCollaborator_ShouldCallService()
     {
         // Arrange
         var initDate = DateTime.Now;
@@ -17,9 +17,9 @@ public class CollaboratorUpdatedConsumerTests
 
         var collaboratorServiceMock = new Mock<ICollaboratorService>();
         var consumer = new CollaboratorUpdatedConsumer(collaboratorServiceMock.Object);
-        var message = new CollaboratorCreatedMessage(Guid.NewGuid(), Guid.NewGuid(), periodDateTime);
+        var message = new CollaboratorUpdatedMessage(Guid.NewGuid(), Guid.NewGuid(), periodDateTime);
 
-        var context = Mock.Of<ConsumeContext<CollaboratorCreatedMessage>>(c => c.Message == message);
+        var context = Mock.Of<ConsumeContext<CollaboratorUpdatedMessage>>(c => c.Message == message);
 
         // Act
         await consumer.Consume(context);

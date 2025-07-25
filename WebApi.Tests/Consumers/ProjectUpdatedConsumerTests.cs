@@ -9,7 +9,7 @@ using Xunit;
 public class ProjectUpdatedConsumerTests
 {
     [Fact]
-    public async Task Should_handle_project_updated_message()
+    public async Task WhenUpdatingConsumedProject_ShouldCallService()
     {
         // Arrange
         var initDate = DateOnly.FromDateTime(DateTime.Now);
@@ -18,9 +18,9 @@ public class ProjectUpdatedConsumerTests
 
         var projectServiceMock = new Mock<IProjectService>();
         var consumer = new ProjectUpdatedConsumer(projectServiceMock.Object);
-        var message = new ProjectCreatedMessage(Guid.NewGuid(), "Projeto 1", "P1", periodDate);
+        var message = new ProjectUpdatedMessage(Guid.NewGuid(), "Projeto 1", "P1", periodDate);
 
-        var context = Mock.Of<ConsumeContext<ProjectCreatedMessage>>(c => c.Message == message);
+        var context = Mock.Of<ConsumeContext<ProjectUpdatedMessage>>(c => c.Message == message);
 
         // Act
         await consumer.Consume(context);
